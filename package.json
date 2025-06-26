@@ -1,0 +1,40 @@
+{
+  "name": "todo-fullstack",
+  "version": "1.0.0",
+  "description": "Full-stack TODO application with Node.js backend and Next.js frontend",
+  "scripts": {
+    "install-all": "cd backend && npm install && cd ../frontend && npm install",
+    "dev": "concurrently \"cd backend && npm run dev\" \"cd frontend && npm run dev\"",
+    "start": "concurrently \"cd backend && node index.js\" \"cd frontend && npm start\"",
+    "build": "cd frontend && npm run build",
+    "test": "echo \"Running application tests...\" && powershell -ExecutionPolicy Bypass -File ./test-app.ps1",
+    "setup": "npm run install-all && echo \"✅ Setup complete! Run 'npm run dev' to start the application\"",
+    "backend": "cd backend && npm run dev",
+    "frontend": "cd frontend && npm run dev",
+    "clean": "cd backend && rmdir /s /q node_modules 2>nul & cd ../frontend && rmdir /s /q node_modules 2>nul & rmdir /s /q .next 2>nul",
+    "reset": "npm run clean && npm run install-all"
+  },
+  "devDependencies": {
+    "concurrently": "^9.0.1"
+  },
+  "keywords": [
+    "todo",
+    "fullstack",
+    "nodejs",
+    "express",
+    "nextjs",
+    "react",
+    "mongodb",
+    "tailwind"
+  ],
+  "author": "Sunil Patil",
+  "license": "ISC",
+  "engines": {
+    "node": ">=18.0.0",
+    "npm": ">=8.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "your-repository-url"
+  }
+}
